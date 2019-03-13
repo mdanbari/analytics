@@ -1,0 +1,17 @@
+version: '2.0'
+
+services:
+  springboot:
+    build: .   
+    container_name: springboot
+    ports:
+      - 8085:8080
+    links:
+      - cassandra
+  cassandra:
+    image: "cassandra"
+    container_name: cassandra
+    ports:
+      - 9042:9042    
+      
+    
